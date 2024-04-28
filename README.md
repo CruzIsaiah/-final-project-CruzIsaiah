@@ -1,6 +1,11 @@
 ![boldredlogo](https://github.com/CruzIsaiah/TwistedLiterature/assets/137027699/51600f15-4b25-4f2b-85c0-d4fcb0e958c6)
-https://gentle-maamoul-e7bec9.netlify.app/
-# Twisted Literature
+
+https://snazzy-gnome-58d79c.netlify.app/
+
+)
+)
+
+)# Twisted Literature
 Twisted Literature is a platform for writers and readers to engage, share, and explore short stories, creative writing, and more. The platform aims to provide various features to enhance user experience, foster community interaction, and promote creativity.
 
 ## Features
