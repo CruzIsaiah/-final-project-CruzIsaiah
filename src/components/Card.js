@@ -61,9 +61,6 @@ const Card = (props) => {
       </Link>
       {/* Date posted */}
       <p className="datePosted">{formattedDate(timestamp)}</p>
-      {/* Comment count */}
-      <p className="comments">{commentCount} Comments</p>
-      {/* Upvote count */}
       <p className="upVotes">{upvoteCount} Upvotes</p>
     </div>
   );
