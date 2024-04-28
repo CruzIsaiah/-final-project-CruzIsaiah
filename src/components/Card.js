@@ -7,46 +7,45 @@ import { supabase } from "../config/client"; // Import supabase
 const Card = (props) => {
   const [upvoteCount, setUpvoteCount] = useState(0);
   const [commentCount, setCommentCount] = useState(0);
+  const [timestamp, setTimestamp] = useState("");
 
   // Fetch post data and comments count based on ID from Supabase
   useEffect(() => {
-    const fetchPostAndComments = async () => {
+    const fetchPostData = async () => {
       try {
         // Fetch post data
-        const { data: postData, error: postError } = await supabase
+        const { data, error } = await supabase
           .from("posts")
-          .select("upvotes")
+          .select("upvotes, datePosted")
           .eq("id", props.id)
           .single();
-        if (postError) {
-          throw postError;
+        if (error) {
+          console.error("Error fetching post data:", error);
+        } else {
+          setUpvoteCount(data.upvotes || 0);
+          setTimestamp(data.datePosted || "");
         }
-        setUpvoteCount(postData.upvotes || 0);
-
-        // Fetch comments associated with the post
-        const { data: commentsData, error: commentsError } = await supabase
-          .from("comments")
-          .select()
-          .eq("post_id", props.id);
-        if (commentsError) {
-          throw commentsError;
-        }
-        setCommentCount(commentsData.length || 0); // Set comment count
       } catch (error) {
-        console.error("Error fetching post and comments:", error);
+        console.error("Error fetching post data:", error);
       }
     };
 
-    fetchPostAndComments();
+    fetchPostData();
   }, [props.id]); // Run effect whenever the ID parameter changes
 
   // Function to format the timestamp into a human-readable date and time
   const formattedDate = (timestamp) => {
-    if (timestamp && timestamp.seconds) {
-      const postDate = new Date(timestamp.seconds * 1000);
-      const hours = postDate.getHours().toString().padStart(2, '0');
-      const minutes = postDate.getMinutes().toString().padStart(2, '0');
-      return `${hours}:${minutes}`;
+    if (timestamp) {
+      const postDate = new Date(timestamp);
+      const formatted = postDate.toLocaleString('en-US', { 
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      });
+      return formatted;
     }
     return "";
   };
@@ -59,7 +58,7 @@ const Card = (props) => {
       <Link to={`viewPost/${props.id}`} style={{ textDecoration: 'none' }}>
         <h2 className="title">{props.title}</h2>
       </Link>
-      <p className="datePosted">{props.timestamp ? formattedDate(props.timestamp) : ""}</p>
+      <p className="datePosted">{formattedDate(timestamp)}</p>
       <p className="comments">{commentCount} Comments</p>
       <p className="upVotes">{upvoteCount} Upvotes</p>
     </div>
