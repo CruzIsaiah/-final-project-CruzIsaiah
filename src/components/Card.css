@@ -1,0 +1,101 @@
+.Card {
+    background-color: rgba(57, 54, 54, 0.396);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(153, 153, 153, 0.196);
+    border-radius: 20px;
+    padding: 20px 10px; /* Adjust padding as needed */
+    margin-bottom: 25px;
+    width: 600px; /* Adjust the width as needed */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; /* Center the card horizontally */
+    position: relative; /* Ensure relative positioning for absolute elements */
+    color: white;
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  
+  .moreButton {
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .comment-input {
+    color: white;
+    background-color: rgb(0, 0, 0); /* Change this color to your desired color */
+    border-radius: 4px; /* Optional: Add border radius for rounded corners */
+    padding: 10px; /* Optional: Adjust padding as needed */
+    width: 100%; /* Optional: Set width to fill the container */
+    box-sizing: border-box; /* Optional: Ensure padding and border are included in width */
+    resize: vertical; /* Optional: Allow vertical resizing */
+  }
+  
+  /* Card.css */
+  
+  .comments {
+    font-size: 12px; /* Set font size to be smaller */
+    position: absolute;
+    bottom: 25px; /* Adjust top position */
+    left:11px;
+  }
+  
+  .upVotes {
+    font-size: 12px; /* Set font size to be smaller */
+    position: absolute;
+    bottom: 10px; /* Adjust top position */
+    left:11px;
+  }
+  
+  .datePosted {
+    font-size: 12px; /* Set font size to be smaller */
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    color: white;
+  }
+  
+  .logo {
+    width: 200px; /* Adjust the width as needed */
+  }
+  
+  .circleButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .circleButton img {
+    width: 100%; /* Make sure the image fills the container */
+    height: 100%; /* Make sure the image fills the container */
+    border-radius: 50%; /* Ensure the image is circular */
+  }
+  
+  .title {
+    cursor: pointer; 
+    color: rgb(255, 255, 255); 
+    text-decoration: none; 
+  }
+  
+  .title:hover {
+    text-decoration: none;
+  }
+  
