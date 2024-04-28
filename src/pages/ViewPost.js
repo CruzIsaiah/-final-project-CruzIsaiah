@@ -40,7 +40,7 @@ const ViewPost = () => {
           .from("comments")
           .select("*")
           .eq("post_id", id)
-          .order("timestamp", { ascending: true });
+          .order("timestamp", { ascending: false }); // Sort comments by timestamp in descending order
         if (error) {
           console.error("Error fetching comments:", error);
         } else {
@@ -50,9 +50,10 @@ const ViewPost = () => {
         console.error("Error fetching comments:", error);
       }
     };
-
+  
     fetchComments();
   }, [id]);
+  
 
   const handleCommentSubmit = async (event) => {
     event.preventDefault();
@@ -74,13 +75,13 @@ const ViewPost = () => {
           .from("comments")
           .select("*")
           .eq("post_id", id)
-          .order("timestamp", { ascending: true });
+          .order("timestamp", { ascending: false }); // Sort comments by timestamp in descending order
         if (newCommentError) {
           console.error("Error fetching new comment:", newCommentError);
         } else {
           if (newCommentData && newCommentData.length > 0) {
-            const newComment = newCommentData[newCommentData.length - 1]; // Get the last comment (latest one)
-            setComments((prevComments) => [...prevComments, newComment]); // Update comments state with the new comment
+            const newComment = newCommentData[0]; // Get the first comment (newest one)
+            setComments((prevComments) => [newComment, ...prevComments]); // Update comments state with the new comment
           }
         }
       }
@@ -88,8 +89,6 @@ const ViewPost = () => {
       console.error("Error adding comment:", error);
     }
   };
-  
-  
   
   
   const updateUpvotes = async () => {

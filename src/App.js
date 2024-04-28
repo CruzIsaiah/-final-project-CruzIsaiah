@@ -19,7 +19,7 @@ const App = () => {
       element: <ReadPosts />,
     },
     {
-      path: "/edit/:id",
+      path: "/edit/:id", // Corrected path with ID parameter
       element: <EditPost />,
     },
     {
@@ -50,9 +50,6 @@ const App = () => {
             </li>
             <li>
               <Link to="/new">Create Post</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
             </li>
           </ul>
         </nav>

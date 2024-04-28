@@ -62,7 +62,6 @@
     position: absolute;
     top: 10px; /* Adjust top position */
     left: 10px; /* Adjust left position */
-    color: white;
   }
   
   .logo {
@@ -98,4 +97,3 @@
   .title:hover {
     text-decoration: none;
   }
-  

@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./Card.css";
-import more from "./more.png";
 import { Link } from "react-router-dom";
-import { supabase } from "../config/client"; // Import supabase
+import { supabase } from "../config/client";
+import more from "./more.png";
 
 const Card = (props) => {
   const [upvoteCount, setUpvoteCount] = useState(0);
   const [commentCount, setCommentCount] = useState(0);
   const [timestamp, setTimestamp] = useState("");
 
-  // Fetch post data and comments count based on ID from Supabase
   useEffect(() => {
     const fetchPostData = async () => {
       try {
-        // Fetch post data
         const { data, error } = await supabase
           .from("posts")
           .select("upvotes, datePosted")
           .eq("id", props.id)
+          .order("datePosted", { ascending: false })
           .single();
         if (error) {
           console.error("Error fetching post data:", error);
@@ -31,19 +30,18 @@ const Card = (props) => {
     };
 
     fetchPostData();
-  }, [props.id]); // Run effect whenever the ID parameter changes
+  }, [props.id]);
 
-  // Function to format the timestamp into a human-readable date and time
   const formattedDate = (timestamp) => {
     if (timestamp) {
       const postDate = new Date(timestamp);
-      const formatted = postDate.toLocaleString('en-US', { 
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true
+      const formatted = postDate.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
       });
       return formatted;
     }
@@ -52,14 +50,20 @@ const Card = (props) => {
 
   return (
     <div className="Card">
-      <Link to={"more/" + props.id}>
+      {/* Link to the edit post page */}
+      <Link to={`/edit/${props.id}`}>
+        {/* Image for editing */}
         <img className="moreButton" alt="edit button" src={more} />
       </Link>
-      <Link to={`viewPost/${props.id}`} style={{ textDecoration: 'none' }}>
+      {/* Link to view post */}
+      <Link to={`viewPost/${props.id}`} style={{ textDecoration: "none" }}>
         <h2 className="title">{props.title}</h2>
       </Link>
+      {/* Date posted */}
       <p className="datePosted">{formattedDate(timestamp)}</p>
+      {/* Comment count */}
       <p className="comments">{commentCount} Comments</p>
+      {/* Upvote count */}
       <p className="upVotes">{upvoteCount} Upvotes</p>
     </div>
   );
