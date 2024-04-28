@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+![boldredlogo](https://github.com/CruzIsaiah/TwistedLiterature/assets/137027699/51600f15-4b25-4f2b-85c0-d4fcb0e958c6)
+https://gentle-maamoul-e7bec9.netlify.app/
+# Twisted Literature
+Twisted Literature is a platform for writers and readers to engage, share, and explore short stories, creative writing, and more. The platform aims to provide various features to enhance user experience, foster community interaction, and promote creativity.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+### User Profile
 
-In the project directory, you can run:
+- **Username**: Display your unique username on your profile.
+- **Bio**: Share a brief description about yourself.
+- **Profile Picture**: Upload an image to represent yourself.
+- **Account Created Date**: View the date when your account was created.
 
-### `npm start`
+### Post/Short Story Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Textbox Options**: Customize your text with options like font size and underline.
+- **Share Post**: Easily share your posts with others.
+- **Favorite Post**: Save your favorite posts for later.
+- **Upvote/Downvote**: Express your opinion on posts with voting options.
+- **Reactions**: React to posts with LinkedIn-style reactions.
+- **Hashtags**: Categorize your posts with hashtags.
+- **Trending**: Discover trending posts on the platform.
+- **Following**: Follow other users to stay updated on their posts.
+- **Category Select/Tag**: Tag your posts with relevant categories.
+- **Quick Feedback Icons**: Provide quick feedback on posts with intuitive icons.
+- **Random Prompt**: Engage in timed writing games with unique prompts.
+- **Game with Certain Words**: Challenge yourself to write using specific words.
+- **Weekly Prompt**: Participate in weekly writing prompts.
+- **Badges/Milestones**: Achieve milestones and earn badges for your accomplishments.
+- **Report Post**: Report inappropriate content for moderation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Premium Features
 
-### `npm test`
+- **Longer Text**: Enjoy the ability to write longer posts.
+- **Cover Image**: Add a cover image to your posts for visual appeal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Engagement and Rewards
 
-### `npm run build`
+- **Points for Posts and Comments (Fame Points)**: Earn points for active participation.
+- **User Rating System**: Rate and be rated by other users based on your contributions.
+- **Analytics Dashboard**: Track your engagement metrics with an analytics dashboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Community Interaction
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Messages**: Communicate with other users via direct messages.
+- **Block Users**: Block unwanted users to maintain a positive experience.
+- **Request a Prompt**: Request writing prompts from other writers.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### External Links and Tools
 
-### `npm run eject`
+- **Shop Profile Links**: Link your profile to external shops for book sales.
+- **Grammarly Integration**: Integrate Grammarly for text editing and suggestions.
+- **Typing Game**: Enjoy typing games for fun and improvement.
+- **Finish the Story Game**: Collaborate with others to finish stories.
+- **Vocabulary Game**: Test and expand your vocabulary.
+- **Lifetime Upvoted**: Showcase your lifetime upvotes on your profile.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Additional Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **User Level**: Progress through different levels based on your activity.
+- **Mad Lib Game**: Play Mad Libs for a creative twist.
+- **Illustrator's Page**: Offer illustrations for authors with a fee.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).
