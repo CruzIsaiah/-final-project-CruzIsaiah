@@ -1,30 +1,35 @@
 import React, { useState } from "react";
 import { supabase } from "../config/client";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./CreatePost.css";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate(); // Initialize the navigate function
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitting(true);
-  
+
     try {
-      const { data, error } = await supabase.from('posts').insert([
-        { title, body, datePosted: new Date(), upvotes: 0 }
-      ]);
-  
+      const { data, error } = await supabase
+        .from("posts")
+        .insert([{ title, body, datePosted: new Date(), upvotes: 0 }]);
+
       if (error) {
         throw error;
       }
-  
-      console.log("Post added:", data); 
-      
+
+      console.log("Post added:", data);
+
       // Reset form fields after successful submission
       setTitle("");
       setBody("");
+
+      // Redirect to the homepage after successful submission
+      navigate("/"); // Adjust the path to your homepage route
     } catch (error) {
       console.error("Error adding post:", error.message);
     } finally {
@@ -41,7 +46,7 @@ const CreatePost = () => {
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="titleInput" 
+          className="titleInput"
           required
         />
         <br />
